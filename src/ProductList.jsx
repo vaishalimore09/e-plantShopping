@@ -298,7 +298,17 @@ function ProductList() {
                                         <div className="product-description">{plant.description}</div>
                                         <div className="product-cost">{plant.cost}</div>
                                         {/*Similarly like the above plant.name show other details like description and cost*/}
-                                        <button className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                                        {/* <button className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button> */}
+                                        <button
+                                            className="product-button"
+                                            onClick={() => handleAddToCart(plant)}
+                                            style={{
+                                                backgroundColor: addedToCart[plant.name] ? 'grey' : 'green',
+                                                color: 'white',
+                                            }}
+                                        >
+                                            {addedToCart[plant.name] ? 'Added to Cart' : 'Add to Cart'}
+                                        </button>
                                     </div>
                                 ))}
                             </div>
